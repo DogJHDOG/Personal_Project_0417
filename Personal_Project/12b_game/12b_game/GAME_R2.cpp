@@ -40,7 +40,7 @@ ObjectID ball,ball2,ball3,ball3r,ball3l,ball3d, start, starts3, starts4;
 ObjectID trap1, trap2, trap3, trap4;
 ObjectID up, down, rights, lefts;
 ObjectID wall1, wall2, wall3, wall4;
-ObjectID gameexit, restart, reend, gameexit2, restart2, reend2, gameexit3, restart3, reend3;
+ObjectID gameexit, restart, reend, gameexit2, restart2, reend2, gameexit3, restart3, reend3,end4;
 
 
 int click3x = 0;
@@ -520,6 +520,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action)
 		room3_check();
 
 	} 
+	else if (object == end4) endGame();
 }
 
 void timerCallback(TimerID timer)
@@ -634,6 +635,8 @@ int main()
 
 	guardtimer = game_move_guard(guard1);
 	traptimer = game_trap(trap1);
+	end4 = createObject("images/end.png", endpage, 600, 100, true);
+	scaleObject(end4, 2.0f);
 
 	showMessage("À§ÇèÇÑ Áý¿¡¼­ ¹þ¾î³ª ±ú²ýÇÑ ½£À¸·Î °¡±â À§ÇÑ ¹ÙÄû ¹ú·¹ÀÇ ¸ðÇè");
 
